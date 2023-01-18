@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from "@ngrx/store";
+import { Action, createFeatureSelector, createReducer, createSelector, on } from "@ngrx/store";
 import { UsuarioModel } from "src/app/Models/UsuarioModel";
 import * as fromUsuariosAction from "../usuarios/usuarios.action";
 import { filter } from "rxjs";
@@ -50,3 +50,27 @@ const _usuariosReduce = createReducer(
 export function usuariosReduce(state = initialState, action: Action) {
   return _usuariosReduce(state, action);
 }
+
+const getUsuariosFeatureState = createFeatureSelector<UsuariosState>('usuarios')
+
+export const getUsuarios = createSelector(
+  getUsuariosFeatureState, (state: UsuariosState) => state.usuarios
+)
+
+export const getUsuario = createSelector(
+  getUsuariosFeatureState, (state: UsuariosState) => state.usuario
+)
+
+export const getUsuarioErro = createSelector(
+  getUsuariosFeatureState, (state: UsuariosState) => state.error
+)
+
+export const getUsuariosAdministrador = createSelector(
+  getUsuariosFeatureState,
+  (state: UsuariosState) => state.usuarios.filter((filter)=> filter.perfil == 'Administrador')
+)
+
+export const getUsuariosIdadeMaior50 = createSelector(
+  getUsuariosFeatureState,
+  (state: UsuariosState) => state.usuarios.filter((filter)=> filter.idade >= 50)
+)
