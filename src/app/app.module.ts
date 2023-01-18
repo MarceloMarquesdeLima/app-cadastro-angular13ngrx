@@ -7,12 +7,14 @@ import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarUsuariosComponent,
-    MainComponent
+    MainComponent,
+    CadastroUsuariosComponent
   ],
   imports: [
     BrowserModule,
