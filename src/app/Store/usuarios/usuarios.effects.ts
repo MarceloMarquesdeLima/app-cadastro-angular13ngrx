@@ -33,7 +33,8 @@ export class UsuariosEffects {
       exhaustMap((record: any) =>
         this.usuariosService.getUsuario(record.payload).pipe(
           map(
-            (payload: any) => fromUsuariosAction.LoadUsuarioSuccess({ payload }),
+            (payload: any) =>
+              fromUsuariosAction.LoadUsuarioSuccess({ payload }),
             catchError((error) =>
               of(fromUsuariosAction.LoadUsuarioFail({ error }))
             )
@@ -49,7 +50,8 @@ export class UsuariosEffects {
       exhaustMap((record: any) =>
         this.usuariosService.addUsuario(record.payload).pipe(
           map(
-            (payload: any) => fromUsuariosAction.CreateUsuarioSuccess({ payload }),
+            (payload: any) =>
+              fromUsuariosAction.CreateUsuarioSuccess({ payload }),
             catchError((error) =>
               of(fromUsuariosAction.CreateUsuarioFail({ error }))
             )
@@ -65,7 +67,8 @@ export class UsuariosEffects {
       exhaustMap((record: any) =>
         this.usuariosService.updateUsuario(record.payload).pipe(
           map(
-            (payload: any) => fromUsuariosAction.UpdateUsuarioSuccess({ payload }),
+            (payload: any) =>
+              fromUsuariosAction.UpdateUsuarioSuccess({ payload }),
             catchError((error) =>
               of(fromUsuariosAction.UpdateUsuarioFail({ error }))
             )
@@ -81,7 +84,10 @@ export class UsuariosEffects {
       exhaustMap((record: any) =>
         this.usuariosService.deleteUsuario(record.payload).pipe(
           map(
-            () => fromUsuariosAction.DeleteUsuarioSuccess({ payload: record.payload }),
+            () =>
+              fromUsuariosAction.DeleteUsuarioSuccess({
+                payload: record.payload,
+              }),
             catchError((error) =>
               of(fromUsuariosAction.DeleteUsuarioFail({ error }))
             )

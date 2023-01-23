@@ -12,13 +12,15 @@ import { StoreModule } from '@ngrx/store';
 import { appEffects, appReducer } from './Store/app-state';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ListaUsuariosAdminComponent } from './lista-usuarios-admin/lista-usuarios-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarUsuariosComponent,
     MainComponent,
-    CadastroUsuariosComponent
+    CadastroUsuariosComponent,
+    ListaUsuariosAdminComponent
   ],
   imports: [
     BrowserModule,

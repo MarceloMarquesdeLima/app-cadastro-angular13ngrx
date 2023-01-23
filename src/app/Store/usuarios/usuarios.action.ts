@@ -41,24 +41,24 @@ export const LoadUsuariosFail = createAction(
 
 //Load usuário
 export const LoadUsuario = createAction(
-    usuariosTypeAction.LOAD_USUARIO,
-    props<{ payload: number}>()
+  usuariosTypeAction.LOAD_USUARIO,
+  props<{ payload: number }>()
 );
 
 export const LoadUsuarioSuccess = createAction(
-    usuariosTypeAction.LOAD_USUARIO_SUCCESS,
-    props<{ payload: UsuarioModel }>()
+  usuariosTypeAction.LOAD_USUARIO_SUCCESS,
+  props<{ payload: UsuarioModel }>()
 );
 
 export const LoadUsuarioFail = createAction(
-    usuariosTypeAction.LOAD_USUARIO_FAIL,
-    props<{ error: string}>()
+  usuariosTypeAction.LOAD_USUARIO_FAIL,
+  props<{ error: string }>()
 );
 
 //Create usuário
 export const CreateUsuario = createAction(
     usuariosTypeAction.CREATE_USUARIO,
-    props<{ payload: UsuarioModel[]}>()
+    props<{ payload: UsuarioModel}>()
 );
 
 export const CreateUsuarioSuccess = createAction(
@@ -74,7 +74,7 @@ export const CreateUsuarioFail = createAction(
 //Update usuário
 export const UpdateUsuario = createAction(
     usuariosTypeAction.UPDATE_USUARIO,
-    props<{ payload: UsuarioModel[]}>()
+    props<{ payload: UsuarioModel}>()
 );
 
 export const UpdateUsuarioSuccess = createAction(
