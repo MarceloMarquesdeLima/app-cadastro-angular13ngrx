@@ -1,43 +1,44 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { UsuarioModel } from '../Models/UsuarioModel';
+import { EmpresaModel } from '../Models/Empresa';
 import { Injectable, Type } from '@angular/core';
+import { DeleteEmpresa } from '../Store/empresa/empresa.action';
 
 @Injectable({ providedIn: 'root' })
-export class UsuarioService {
+export class EmpresaService {
   constructor(private http: HttpClient) {}
 
-  getUsuarios() {
-    return this.http.get<UsuarioModel[]>('http://localhost:3000/usuarios');
+  getEmpresas() {
+    return this.http.get<EmpresaModel[]>('http://localhost:3000/Empresas');
   }
 
-  getUsuario(id: number) {
-    return this.http.get<UsuarioModel>('http://localhost:3000/usuarios/' + id);
+  getEmpresa(id: number) {
+    return this.http.get<EmpresaModel>('http://localhost:3000/Empresas/' + id);
   }
 
-  addUsuario(record: UsuarioModel) {
+  addEmpresa(record: EmpresaModel) {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post<UsuarioModel[]>(
-      'http://localhost:3000/usuarios',
+    return this.http.post<EmpresaModel[]>(
+      'http://localhost:3000/Empresas',
       JSON.stringify(record),
       { headers: headers }
     );
   }
 
-  updateUsuario(record: UsuarioModel) {
+  updateEmpresa(record: EmpresaModel) {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put<UsuarioModel[]>(
-      'http://localhost:3000/usuarios/' + record.id,
+    return this.http.put<EmpresaModel[]>(
+      'http://localhost:3000/Empresas/' + record.id,
       JSON.stringify(record),
       { headers: headers }
     );
   }
 
-  deleteUsuario(id: number) {
+  deleteEmpresa(id: number) {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.delete('http://localhost:3000/usuarios/' + id, {
+    return this.http.delete('http://localhost:3000/Empresas/' + id, {
       headers: headers,
     });
   }

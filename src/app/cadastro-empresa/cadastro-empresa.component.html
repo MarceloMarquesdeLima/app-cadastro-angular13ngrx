@@ -1,6 +1,6 @@
-<h3>Cadastro Usuários</h3>
+<h3>Cadastro Empresa</h3>
 
-<form id="myForm" #f="ngForm" (ngSubmit)="addUsuario()">
+<form id="myForm" #f="ngForm" (ngSubmit)="addEmpresa()">
     <div class="col-6">
         <label>Id</label>
         <input id="id" name="id" [(ngModel)]="model.id" class="form-control" type="text">
@@ -10,12 +10,8 @@
         <input id="nome" name="nome" [(ngModel)]="model.nome" class="form-control" type="text">
     </div>
     <div class="col-6">
-        <label>Idade</label>
-        <input id="idade" name="idade" [(ngModel)]="model.idade" class="form-control" type="text">
-    </div>
-    <div class="col-6">
-        <label>Perfil</label>
-        <input id="perfil" name="perfil" [(ngModel)]="model.perfil" class="form-control" type="text">
+        <label>Porte</label>
+        <input id="porte" name="porte" [(ngModel)]="model.porte" class="form-control" type="text">
     </div>
     <div class="col-6 mt-3">
         <button type="submit" class="btn btn-success" >Adicionar</button>
